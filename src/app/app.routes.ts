@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component'; // Updated import
 import { MenuComponent } from './components/menu/menu.component';
 import { CompromissosComponent } from './components/compromissos/compromissos.component';
 import { ContatosComponent } from './components/contatos/contatos.component';
@@ -10,6 +11,7 @@ import { AdminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'registrar', component: SigninComponent }, // Updated route
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   { path: 'compromissos', component: CompromissosComponent, canActivate: [AuthGuard] },
   { path: 'contatos', component: ContatosComponent, canActivate: [AuthGuard] },

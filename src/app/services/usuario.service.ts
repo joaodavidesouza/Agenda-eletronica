@@ -11,6 +11,17 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {}
 
+  register(usuario: Usuario): Observable<Usuario> {
+    const payload = {
+      name: usuario.nome,
+      email: usuario.email,
+      password: usuario.senha,
+      role: usuario.nivelAcesso === 'admin' ? 'adm' : 'user'
+    };
+
+    return this.http.post<Usuario>(`${this.apiUrl}/register`, payload);
+  }
+
   getAll(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(`${this.apiUrl}/users`);
   }
@@ -19,19 +30,13 @@ export class UsuarioService {
     return this.http.get<Usuario>(`${this.apiUrl}/users/${id}`);
   }
 
-  create(usuario: Usuario): Observable<Usuario> {
+  update(id: number, usuario: Usuario): Observable<Usuario> {
     const payload = {
       name: usuario.nome,
       email: usuario.email,
-      password: usuario.senha,
-      role: usuario.nivelAcesso === 'admin' ? 'adm' : 'user' 
+      role: usuario.nivelAcesso === 'admin' ? 'adm' : 'user'
     };
-    console.log('Enviando para /register:', payload); 
-    return this.http.post<Usuario>(`${this.apiUrl}/register`, payload);
-  }
-
-  update(id: number, usuario: Usuario): Observable<Usuario> {
-    return this.http.put<Usuario>(`${this.apiUrl}/users/${id}`, usuario);
+    return this.http.put<Usuario>(`${this.apiUrl}/users/${id}`, payload);
   }
 
   delete(id: number): Observable<void> {

@@ -9,4 +9,8 @@
     </div>
     <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
   </form>
+  <p class="register-link">
+    Não tem uma conta? <a routerLink="/registrar">Registre-se</a>
+  </p>
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
 </div>

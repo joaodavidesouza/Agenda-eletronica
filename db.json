@@ -1,5 +1,12 @@
 {
   "compromissos": [],
-  "contatos": [],
+  "contatos": [
+    {
+      "id": "a4e9",
+      "nome": "asdasd",
+      "telefone": "123124124",
+      "email": "dasdasd@asdahs"
+    }
+  ],
   "locais": []
 }

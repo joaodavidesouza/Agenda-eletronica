@@ -51,11 +51,20 @@ export class ContatosComponent implements OnInit {
   edit(contato: Contato) {
     this.editId = contato.id;
     this.contatoForm.patchValue(contato);
-  }
 
-  delete(id: number) {
-    this.contatoService.delete(id).subscribe(() => this.loadContatos());
+
   }
+  
+  delete(id: number) {
+    console.log('Tentando apagar o contato com ID:', id);
+    this.contatoService.delete(id).subscribe(() => {
+      console.log('Contato apagado com sucesso!');
+      this.loadContatos();
+    }, error => {
+      console.error('Erro ao apagar contato:', error);
+    });
+  }
+  
 
   resetForm() {
     this.contatoForm.reset();

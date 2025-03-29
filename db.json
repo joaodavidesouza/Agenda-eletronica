@@ -1,22 +1,5 @@
 {
-  "compromissos": [
-    {
-      "id": "6207",
-      "titulo": "adasdasd s",
-      "descricao": "asdasda",
-      "data": "2222-02-22",
-      "hora": "23:22",
-      "contatoId": "",
-      "usuarioId": "67e5f0bd0735569ca660933e"
-    }
-  ],
-  "contatos": [
-    {
-      "id": "",
-      "nome": "",
-      "telefone": "",
-      "email": ""
-    }
-  ],
+  "compromissos": [],
+  "contatos": [],
   "locais": []
 }

@@ -1,21 +1,42 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { SigninComponent } from './components/signin/signin.component'; // Updated import
-import { MenuComponent } from './components/menu/menu.component';
-import { CompromissosComponent } from './components/compromissos/compromissos.component';
-import { ContatosComponent } from './components/contatos/contatos.component';
-import { LocaisComponent } from './components/locais/locais.component';
-import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
+import { SigninComponent } from './components/signin/signin.component';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'registrar', component: SigninComponent }, // Updated route
-  { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
-  { path: 'compromissos', component: CompromissosComponent, canActivate: [AuthGuard] },
-  { path: 'contatos', component: ContatosComponent, canActivate: [AuthGuard] },
-  { path: 'locais', component: LocaisComponent, canActivate: [AuthGuard, AdminGuard] },
-  { path: 'usuarios', component: UsuariosComponent, canActivate: [AuthGuard, AdminGuard] },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/menu', pathMatch: 'full' },
+  { 
+    path: 'login', 
+    loadComponent: () => import('./components/login/login.component').then(m => m.LoginComponent) 
+  },
+  {
+    path: 'registrar',
+    component: SigninComponent
+  },
+  { 
+    path: 'menu', 
+    loadComponent: () => import('./components/menu/menu.component').then(m => m.MenuComponent),
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'compromissos', 
+    loadComponent: () => import('./components/compromissos/compromissos.component').then(m => m.CompromissosComponent),
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'contatos', 
+    loadComponent: () => import('./components/contatos/contatos.component').then(m => m.ContatosComponent),
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'locais', 
+    loadComponent: () => import('./components/locais/locais.component').then(m => m.LocaisComponent),
+    canActivate: [AuthGuard, AdminGuard]
+  },
+  { 
+    path: 'usuarios', 
+    loadComponent: () => import('./components/usuarios/usuarios.component').then(m => m.UsuariosComponent),
+    canActivate: [AuthGuard, AdminGuard]
+  },
+  { path: '**', redirectTo: '/menu' }
 ];

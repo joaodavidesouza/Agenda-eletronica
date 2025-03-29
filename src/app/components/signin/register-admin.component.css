@@ -1,0 +1,176 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9fafb;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 1.5rem;
+  }
+  
+  .register-card {
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 2rem;
+  }
+  
+  .register-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .register-title {
+    color: #111827;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .register-divider {
+    width: 60px;
+    height: 3px;
+    background: #4f46e5;
+    margin: 0.75rem auto;
+  }
+  
+  .register-description {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .register-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+  }
+  
+  .register-input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+  }
+  
+  .error-message {
+    color: #dc2626;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+  }
+  
+  .form-error-message {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .register-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .register-button:hover:not(:disabled) {
+    background: #4338ca;
+  }
+  
+  .register-button:disabled {
+    background: #e5e7eb;
+    cursor: not-allowed;
+  }
+  
+  .login-link {
+    background: transparent;
+    border: none;
+    color: #4f46e5;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .login-link:hover {
+    text-decoration: underline;
+  }
+  
+  .success-message {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #ecfdf5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #10b981;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .success-text h3 {
+    color: #065f46;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.125rem;
+  }
+  
+  .success-text p {
+    color: #047857;
+    margin: 0;
+    font-size: 0.875rem;
+  }
+  
+  @media (max-width: 480px) {
+    .register-card {
+      padding: 1.5rem;
+    }
+  }

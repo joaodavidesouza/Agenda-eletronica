@@ -8,6 +8,10 @@
       <input type="password" formControlName="senha" placeholder="Senha" required>
     </div>
     <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+<div class="register-option">
+  <p>Precisa criar uma conta de administrador?</p>
+  <a [routerLink]="['/register-admin']" class="register-link">Cadastrar administrador</a>
+</div>
   </form>
   <p class="register-link">
     Não tem uma conta? <a routerLink="/registrar">Registre-se</a>

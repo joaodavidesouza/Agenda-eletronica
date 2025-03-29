@@ -34,10 +34,6 @@ import { Observable } from 'rxjs';
           </div>
         </div>
         <div class="form-group">
-          <select formControlName="nivelAcesso">
-            <option value="usuario">Usuário</option>
-            <option value="admin">Administrador</option>
-          </select>
         </div>
         <button type="submit" [disabled]="signinForm.invalid">Registrar</button>
       </form>

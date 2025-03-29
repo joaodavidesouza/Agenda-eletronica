@@ -33,8 +33,8 @@ export class CompromissosComponent implements OnInit {
       descricao: ['', Validators.required],
       data: ['', Validators.required],
       hora: ['', Validators.required],
-      contatoId: [null, Validators.required],
-      localId: [null, Validators.required]
+      contatoId: [null], // Agora opcional
+      localId: [null] // Adicionado como opcional
     });
   }
 
@@ -58,6 +58,7 @@ export class CompromissosComponent implements OnInit {
       ...this.compromissoForm.value,
       usuarioId: this.authService.getCurrentUser().id
     };
+
     if (this.editId) {
       this.compromissoService.update(this.editId, compromisso).subscribe(() => {
         this.loadCompromissos();

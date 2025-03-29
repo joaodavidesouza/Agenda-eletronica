@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
-import { SigninComponent } from './components/signin/signin.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -11,7 +10,11 @@ export const routes: Routes = [
   },
   {
     path: 'registrar',
-    component: SigninComponent
+    loadComponent: () => import('./components/signin/signin.component').then(m => m.SigninComponent)
+  },
+  {
+    path: 'register-admin',
+    loadComponent: () => import('./components/signin/register-admin.component').then(m => m.RegisterAdminComponent)
   },
   { 
     path: 'menu', 
